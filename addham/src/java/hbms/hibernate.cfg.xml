@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <!--<session-factory>
+    <property name="dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="connection.url">jdbc:oracle:thin:@iprudbsvr:1522:ecms10</property>
+    <property name="connection.username">live_eclaims</property>
+    <property name="connection.password">live_eclaims</property>
+    <property name="hbm2ddl.auto">update</property>
+    <mapping resource="hbms/AdminHome.hbm.xml"/>
+    <mapping resource="hbms/ArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/SubArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/UploadFiles.hbm.xml"/>
+    <mapping resource="hbms/user.hbm.xml"/>
+    <mapping resource="hbms/ip.hbm.xml"/>
+    <mapping resource="hbms/articlenumber.hbm.xml"/> 
+    <mapping resource="hbms/Roles.hbm.xml"/> 
+    <mapping resource="hbms/RoleUser.hbm.xml"/> 
+    <mapping resource="hbms/RoleArticle.hbm.xml"/> 
+
+  </session-factory>-->
+  <!--
+ <session-factory>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/sree</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">system</property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+    <property name="hibernate.c3p0.min_size">7</property>
+    <property name="hibernate.c3p0.max_size">20</property>
+    <property name="hibernate.c3p0.timeout">1000</property>
+    <property name="hibernate.c3p0.max_statements">20</property>
+    <property name="hibernate.c3p0.idle_test_period">100</property>
+    <property name="hibernate.c3p0.validate">true</property>
+    <mapping resource="hbms/AdminHome.hbm.xml"/>
+    <mapping resource="hbms/ArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/SubArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/UploadFiles.hbm.xml"/>
+    <mapping resource="hbms/user.hbm.xml"/>
+    <mapping resource="hbms/ip.hbm.xml"/> 
+    <mapping resource="hbms/articlenumber.hbm.xml"/> 
+    <mapping resource="hbms/Roles.hbm.xml"/> 
+    <mapping resource="hbms/RoleUser.hbm.xml"/> 
+    <mapping resource="hbms/RoleArticle.hbm.xml"/>  
+     </session-factory>  
+     -->
+   
+         
+ <session-factory>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/addham</property>
+    <property name="connection.username">system</property>
+    <property name="connection.password">admin</property>
+    <property name="hbm2ddl.auto">update</property>
+    <property name="show_sql">false</property>
+    <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+    <property name="hibernate.c3p0.min_size">7</property>
+    <property name="hibernate.c3p0.max_size">20</property>
+    <property name="hibernate.c3p0.timeout">100</property>
+    <property name="hibernate.c3p0.max_statements">20</property>
+    <property name="hibernate.c3p0.idle_test_period">50</property>
+    <property name="hibernate.c3p0.validate">true</property>
+    <mapping resource="hbms/AdminHome.hbm.xml"/>
+    <mapping resource="hbms/ArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/SubArticleTypes.hbm.xml"/>
+    <mapping resource="hbms/UploadFiles.hbm.xml"/>
+    <mapping resource="hbms/user.hbm.xml"/>
+    <mapping resource="hbms/ip.hbm.xml"/> 
+    <mapping resource="hbms/articlenumber.hbm.xml"/> 
+    <mapping resource="hbms/Roles.hbm.xml"/> 
+    <mapping resource="hbms/RoleUser.hbm.xml"/> 
+    <mapping resource="hbms/RoleArticle.hbm.xml"/>  
+    <mapping resource="hbms/temp.hbm.xml"/>
+    <mapping resource="hbms/thoranam.hbm.xml"/>
+
+ </session-factory> 
+     
+   
+</hibernate-configuration>

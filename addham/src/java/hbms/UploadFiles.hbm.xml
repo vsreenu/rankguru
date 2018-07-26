@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="com.sree.tali.pojo.UploadImagePojo" table="upload_file">
+      <id name="id" type="int" column="id">
+         <generator class="increment"/>
+      </id>
+      <property name="description" column="DESCRIPTION" type="string"  length="600"/>
+    <property name="articleType" column="ARTICLE_TYPE" type="string"/>
+    <property name="articleSubType" column="ARTICLE_SUB_TYPE" type="string"/>
+    <property name="title" column="TITLE" type="string"/>
+    <property name="folderName" column="FOLDER_NAME" type="string"/>
+    <property name="subfolderName" column="SUB_FOLDER_NAME" type="string"/>
+    <property name="filPath" column="FILEPATH" type="string"/>
+    <property name="imagePath" column="IMAGE_PATH" type="string"/>
+    <property name="status" column="STATUS" type="string"/>
+    <property name="content" column="ARTICLE_CONTENT" type="string"/>
+    <property name="count" column="COUNT" type="int"/>
+    <property name="articleNumber" column="ARTICLE_NUMBER" type="int"/>
+    <property name="createddate" column="CREATED_DATE" type="string"/>
+    <property name="metaData" column="META_DATE" type="string" />
+    <property name="url" column="URL" type="string" />
+
+   </class>
+</hibernate-mapping>

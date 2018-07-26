@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+      <form-bean type = "com.sree.tali.pojo.LoginForm" name="loginpojo"/>
+      <form-bean type = "com.sree.tali.pojo.AdminHomepojo" name="adminpojo"/>
+      <form-bean type = "com.sree.tali.pojo.UploadImagePojo" name="uploadimagepojo"/>
+      <form-bean type = "com.sree.tali.pojo.ArticleTypes" name="articletypespojo"/>
+      <form-bean type = "com.sree.tali.pojo.SubArticleTypes" name="subarticletypespojo"/>
+      <form-bean type = "com.sree.tali.pojo.TempPojo" name="temppojo"/>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="adminloginpage"  path="/SreeLogin.jsp"/>
+    </global-forwards>
+
+    <action-mappings>
+          <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+          <action path="/j_acegi_security_check" type = "com.sree.tali.actions.LoginAction" name="loginpojo">
+          <forward name="adminloginpage"  path="/SreeLogin.jsp"/>
+          <forward name="adminhomepage"  path="/admin/HomePage/homepage.jsp"/>
+          </action>
+          <action path="/HomePageAction" type = "com.sree.tali.actions.UploadHomeAction" name="adminpojo" parameter="method" scope="request">
+          <forward name="welcome"  path="/admin/sree-login.jsp"/>
+          </action>
+          <action path="/CreateFolderAction" type = "com.sree.tali.actions.CreateFolder" name="adminpojo">
+          <forward name="welcome"  path="/admin/sree-login.jsp"/>
+          </action>
+          <action path="/home" type = "com.sree.tali.actions.LoginAction" parameter="method">
+          <forward name="homepage"  path="/homepage.jsp"/>
+          <forward name="commonpage"  path="/commonpage.jsp"/>
+          </action>
+          
+          <action path="/showarticles" type = "com.sree.tali.actions.ShowArticles" parameter="method">
+          <forward name="homepage"  path="/homepage.jsp"/>  
+          <forward name="commonpage"  path="/commonpage.jsp"/>
+          <forward name="titlespage"  path="/titlespage.jsp"/>
+          </action>
+          
+          <action path="/temparticles" type = "com.sree.tali.actions.TempArticles" parameter="method" name="temppojo">
+          <forward name="temphome"  path="/temp/temphomepage.jsp"/>  
+          <forward name="tempview"  path="/temp/tempviewarticlespage.jsp"/>
+          <forward name="viewtemparticle"  path="/temp/tempcommonpage.jsp"/>
+          </action>
+          
+          <action  path="/uploadimages"  type="com.sree.tali.actions.UploadImages" parameter="method" name="uploadimagepojo" scope="session">
+           <forward name="uloadimages"  path="/admin/HomePage/uploadhomeimages.jsp"/> 
+           <forward name="adduser"  path="/admin/HomePage/adduser.jsp"/> 
+           <forward name="addip"  path="/admin/HomePage/addip.jsp"/> 
+           <forward name="showarticles"  path="/admin/HomePage/viewarticles.jsp"/> 
+           <forward name="showusers"  path="/admin/HomePage/viewusers.jsp"/> 
+           <forward name="showips"  path="/admin/HomePage/viewips.jsp"/> 
+           <forward name="viewarticlespage"  path="/admin/HomePage/viewarticlespage.jsp"/> 
+           <forward name="updatearticle"  path="/admin/HomePage/updatearticle.jsp"/>
+           <forward name="addimages"  path="/admin/HomePage/addimages.jsp"/>
+           <forward name="addarticletypepage"  path="/admin/HomePage/addarticletypes.jsp"/>
+           <forward name="viewarticletypepage"  path="/admin/HomePage/viewarticletypes.jsp"/>
+           
+           <forward name="addrolepage"  path="/admin/HomePage/addrole.jsp"/>
+           <forward name="addroleuserpage"  path="/admin/HomePage/addroleuser.jsp"/>
+           <forward name="addrolearticlepage"  path="/admin/HomePage/addrolearticle.jsp"/>           
+           <forward name="viewroles"  path="/admin/HomePage/viewroles.jsp"/>
+           <forward name="viewroleusers"  path="/admin/HomePage/viewroleuser.jsp"/>
+           <forward name="viewrolearticles"  path="/admin/HomePage/viewrolearticle.jsp"/>
+
+
+          </action>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+  
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  <plug-in className="com.sree.tali.plugin.HibernatePlugin">
+        <set-property
+            property="path"
+            value="/hbms/hibernate.cfg.xml"/>
+  </plug-in>
+
+  
+</struts-config>
